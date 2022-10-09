@@ -1,9 +1,11 @@
 package com.app.hellokmp.android
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.app.hellokmp.Greeting
+import android.util.Log
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+import com.app.hellokmp.Calculator
+import com.app.hellokmp.Greeting
 
 fun greet(): String {
     return Greeting().greeting()
@@ -16,5 +18,6 @@ class MainActivity : AppCompatActivity() {
 
         val tv: TextView = findViewById(R.id.text_view)
         tv.text = greet()
+        Log.d("Test", "Sum:${Calculator.sum(25, 50)}")
     }
 }
