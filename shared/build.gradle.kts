@@ -59,6 +59,7 @@ android {
         minSdk = 26
         targetSdk = 32
     }
+    namespace = "com.app.hellokmp"
 }
 dependencies {
     testImplementation("junit:junit:4.12")

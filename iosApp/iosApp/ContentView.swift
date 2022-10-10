@@ -102,13 +102,20 @@ struct ContentView: View {
                 
                 switch self.operation {
                 case .add:
-                    value = "\(runningNumberOne + runningNumberTwo)"
+                    let sum = Calculator.Companion().sum(number1:runningNumberOne, number2:runningNumberTwo)
+                    value = "\(sum)"
                 case .subtract:
-                    value = "\(runningNumberOne - runningNumberTwo)"
+                    value = "\(Calculator.Companion().subtraction(number1: runningNumberOne, number2: runningNumberTwo))"
                 case .multiplication:
-                    value = "\(runningNumberOne * runningNumberTwo)"
+                    value = "\(Calculator.Companion().multiplication(number1: runningNumberOne, number2: runningNumberTwo))"
                 case .division:
-                    value = "\(runningNumberOne / runningNumberTwo)"
+                    do {
+                        try
+                            value = "\(Calculator.Companion().division(number1: runningNumberOne, number2: runningNumberTwo))"
+                    }catch {
+                        value = "\(error.localizedDescription)"
+                    }
+                    
                 default:
                     debugPrint("Invalid operation")
                 }
